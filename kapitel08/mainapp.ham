@@ -1,0 +1,38 @@
+/*imperative program*//**
+ * wir definieren eine Prozedur rechtsUm(),
+ * die den Hamster 3x linksUm() dreht
+ */
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+/**
+ * wir definieren eine Prozedur laufeKante(),
+ * die den Hamster 4 Schritte vorwärts laufen
+ * lässt
+ */
+void laufeKante() {
+
+	vor();
+	vor();
+	vor();
+	vor();
+}
+
+void main() {
+    
+    laufeKante();
+    rechtsUm();
+    
+    laufeKante();
+    rechtsUm();
+    
+    laufeKante();
+    rechtsUm();
+    
+    laufeKante();
+    rechtsUm();
+}
