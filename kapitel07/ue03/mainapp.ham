@@ -1,0 +1,30 @@
+/*imperative program*/void main() {
+
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+}

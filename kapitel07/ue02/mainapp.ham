@@ -1,0 +1,8 @@
+/*imperative program*/void main() {
+
+	// der Hamster soll 4 Schritte ausführen
+	vor();
+	vor();
+	vor();
+	vor(); 
+}
