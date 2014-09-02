@@ -1,4 +1,8 @@
-/*imperative program*/void main() {
+/*imperative program*//**
+ * Hamster startet in der linken unteren Ecke mit Blickrichtung OSTEN und 
+ * läuft eine Runde im Kreis (gegen den Uhrzeigersinn)
+ */
+void main() {
 
 	// eine Kante laufen und Drehung
 	vor();
