@@ -1,0 +1,14 @@
+/*imperative program*/void main() {
+
+	// bedingte Ausführung, zur Absicherung
+	// unserer Grundbefehle
+	
+	if( vornFrei() )
+		vor();
+		
+	if( kornDa() )
+		nimm();
+		
+	if( ! maulLeer() )
+		gib();    
+}

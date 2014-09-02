@@ -1,0 +1,46 @@
+/*imperative program*//**
+ * Hamster durchläuft einen Gang, der 
+ *
+ *	a) maximal 11 Kacheln lang ist
+ *  b) auf dessen Kacheln 0 oder 1 Körner liegen
+ *
+ * Der Hamster soll alle Körner einsammeln und am Ende
+ * des Gangs stehen bleiben
+ */
+
+void sicheresNimm() {
+
+	// ein Korn kann nur aufgenommen werden, wenn es auf der Kachel liegt
+	if(kornDa())
+		nimm();
+}
+
+void sicheresVor() {
+
+	// ein Schritt nach vorn kann nur gemacht werden, wenn die Kachel
+	// (in Blickrichtung des Hamsters) frei ist
+	if(vornFrei())
+		vor();
+}
+
+void goWilli() {
+	
+	sicheresNimm();
+	sicheresVor();   
+} 
+
+void main() {
+
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+	goWilli();
+
+	sicheresNimm();	
+}
