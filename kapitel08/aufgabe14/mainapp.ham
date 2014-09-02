@@ -1,0 +1,57 @@
+/*imperative program*/// dunkelgrüne Bew.
+void zurHuerde() {
+
+	vor();
+}
+
+// hellgrüne/türkisfarbene Bew.
+void huerdenHoehe() {
+	
+	vor();
+	vor();
+	vor();
+	vor();	
+}
+
+// rote Bew.
+void huerdenBreite() {
+
+	vor();
+	vor();
+}
+
+void huerdenSprung() {
+	
+	huerdenHoehe();
+	rechtsUm();
+	huerdenBreite();
+	rechtsUm();
+	huerdenHoehe();
+	linksUm();
+}
+
+void rechtsUm() {
+	
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void main() {
+
+	zurHuerde();
+	linksUm(); 
+	huerdenSprung();   
+
+	zurHuerde(); 
+	linksUm(); 	
+	huerdenSprung();   
+
+	zurHuerde(); 
+	linksUm(); 	
+	huerdenSprung();   
+
+	zurHuerde(); 
+	linksUm(); 	
+	huerdenSprung();   
+}
