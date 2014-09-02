@@ -20,19 +20,25 @@ void laufeKante() {
 	vor();
 	vor();
 	vor();
+	vor();
+	vor();
 }
 
+void laufenUndRechtsDrehen() {
+
+    laufeKante();
+    rechtsUm();
+}
+
+void kreisLauf() {
+
+	laufenUndRechtsDrehen();
+	laufenUndRechtsDrehen();
+	laufenUndRechtsDrehen();
+	laufenUndRechtsDrehen();
+
+}
 void main() {
-    
-    laufeKante();
-    rechtsUm();
-    
-    laufeKante();
-    rechtsUm();
-    
-    laufeKante();
-    rechtsUm();
-    
-    laufeKante();
-    rechtsUm();
+
+    kreisLauf();
 }

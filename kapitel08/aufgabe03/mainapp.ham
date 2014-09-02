@@ -1,0 +1,57 @@
+/*imperative program*/void main() {
+    laufeZumBerg();
+    erklimmeErsteStufe();
+    erklimmeZweiteStufe();
+    erklimmeDritteStufe();
+    erklimmeGipfel();
+    
+    // Beginn der Erweiterung: Berg wieder hinab steigen
+    stufeHinab();
+    stufeHinab();
+    stufeHinab();
+    stufeHinab();
+}
+
+/**
+ * Erweiterung des Beispielprogramms
+ */
+void stufeHinab() {
+
+    vor();
+    rechtsUm();
+    vor();
+    linksUm();
+}
+
+void laufeZumBerg() {
+    vor();
+}
+
+void erklimmeErsteStufe() { 
+    erklimmeStufe(); 
+}
+
+void erklimmeZweiteStufe() { 
+    erklimmeStufe(); 
+}
+
+void erklimmeDritteStufe() { 
+    erklimmeStufe(); 
+}
+
+void erklimmeGipfel() { 
+    erklimmeStufe(); 
+}
+
+void erklimmeStufe() {
+    linksUm(); 
+    vor();
+    rechtsUm(); 
+    vor();
+}
+
+void rechtsUm() {
+    linksUm(); 
+    linksUm(); 
+    linksUm(); 
+}
