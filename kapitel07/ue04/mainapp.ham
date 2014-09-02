@@ -1,0 +1,42 @@
+/*imperative program*//**
+ * Hamster startet in der linken unteren Ecke mit Blickrichtung NORDEN und 
+ * läuft eine Runde im Kreis (im Uhrzeigersinn)
+ */
+void main() {
+
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	linksUm();
+	linksUm();
+	
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	linksUm();
+	linksUm();
+	
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	linksUm();
+	linksUm();
+	
+	// eine Kante laufen und Drehung
+	vor();
+	vor();
+	vor();
+	vor();
+	linksUm();
+	linksUm();
+	linksUm();
+}
