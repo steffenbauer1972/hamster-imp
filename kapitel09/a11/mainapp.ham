@@ -96,7 +96,7 @@ void main() {
     sicheresVor();
     rechtsUm();
     
-    // und es geht los:
+    // und es geht los mit Poolreihe 1
     if( vornFrei() ) {
     	vor();
 		linksUm();
@@ -105,7 +105,8 @@ void main() {
     	laufeZurueck();
     	linksUm();
     }
-    
+
+    // ... dann Poolreihe 2
     if( vornFrei() ) {
     	vor();
     	linksUm();
@@ -115,6 +116,7 @@ void main() {
     	linksUm();
     }
     
+    // ... dann Poolreihe 3
     if( vornFrei() ) {
     	vor();
     	linksUm();
@@ -124,6 +126,7 @@ void main() {
     	linksUm();
     }
     
+    // ... dann Poolreihe 4
     if( vornFrei() ) {
     	vor();
     	linksUm();
