@@ -68,15 +68,18 @@ void main() {
     
 	naechsteReihe();
 
-	ernteReihe();
-	laufeZurueck();
-    
-	naechsteReihe();
 
 	ernteReihe();
 	laufeZurueck();
     
 	naechsteReihe();
+
+
+	ernteReihe();
+	laufeZurueck();
+    
+	naechsteReihe();
+
 
 	ernteReihe();
 	laufeZurueck();

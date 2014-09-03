@@ -1,0 +1,134 @@
+/*imperative program*//**
+ * Kapitel 09, Aufgabe 11
+ *
+ * @author Steffen Bauer <schlupp2014@gmail.com>
+ *
+ */
+ 
+void kehrtUm() {
+
+	linksUm();
+	linksUm();
+}
+
+void rechtsUm() {
+
+	kehrtUm();
+	linksUm();
+}
+
+void sicheresNimm() {
+
+	if( kornDa() )
+		nimm();
+}
+
+void sicheresVor() {
+	
+	if( vornFrei() )
+		vor();
+}
+
+void sicheresGib() {
+	
+	if( !maulLeer() )
+		gib();
+}
+
+void fuelleReihe() {
+
+	sicheresGib();
+	sicheresVor();
+
+	sicheresGib();
+	sicheresVor();
+
+	sicheresGib();
+	sicheresVor();
+
+	sicheresGib();
+
+}
+
+void nimmAlle() {
+
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+	sicheresNimm();
+}
+
+void laufeZurueck() {
+	
+	sicheresVor();
+	sicheresVor();
+	sicheresVor();
+}
+
+void main() {
+    
+    // Körner abholen
+    kehrtUm();
+    sicheresVor();
+    nimmAlle();	
+    
+    // zurück zum Start
+    kehrtUm();
+    sicheresVor();
+    
+    // ... und in den Pool steigen
+    sicheresVor();
+    rechtsUm();
+    
+    // und es geht los:
+    if( vornFrei() ) {
+    	vor();
+		linksUm();
+    	fuelleReihe();
+    	kehrtUm();
+    	laufeZurueck();
+    	linksUm();
+    }
+    
+    if( vornFrei() ) {
+    	vor();
+    	linksUm();
+    	fuelleReihe();
+    	kehrtUm();
+    	laufeZurueck();
+    	linksUm();
+    }
+    
+    if( vornFrei() ) {
+    	vor();
+    	linksUm();
+    	fuelleReihe();
+    	kehrtUm();
+    	laufeZurueck();
+    	linksUm();
+    }
+    
+    if( vornFrei() ) {
+    	vor();
+    	linksUm();
+    	fuelleReihe();
+    	kehrtUm();
+    	laufeZurueck();
+    	linksUm();
+    }
+}
