@@ -109,7 +109,7 @@ void main() {
     // ... dann Poolreihe 2
     if( vornFrei() ) {
     	vor();
-    	linksUm();
+		linksUm();
     	fuelleReihe();
     	kehrtUm();
     	laufeZurueck();
@@ -119,7 +119,7 @@ void main() {
     // ... dann Poolreihe 3
     if( vornFrei() ) {
     	vor();
-    	linksUm();
+		linksUm();
     	fuelleReihe();
     	kehrtUm();
     	laufeZurueck();
@@ -129,7 +129,7 @@ void main() {
     // ... dann Poolreihe 4
     if( vornFrei() ) {
     	vor();
-    	linksUm();
+		linksUm();
     	fuelleReihe();
     	kehrtUm();
     	laufeZurueck();
