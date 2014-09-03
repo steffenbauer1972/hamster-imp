@@ -1,0 +1,80 @@
+/*imperative program*//**
+ * Beispiellösung: Kapitel 9, Aufgabe 7
+ *
+ */
+ 
+void sicheresNimm() {
+	
+	if(kornDa())
+		nimm();
+}
+
+void sicheresVor() {
+
+	if(vornFrei())
+		vor();
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void naechsteKachelSammeln() {
+
+	sicheresVor();
+	sicheresNimm();
+}
+
+void ernteReihe() {
+
+	sicheresNimm();
+	
+	naechsteKachelSammeln();
+	naechsteKachelSammeln();	
+	naechsteKachelSammeln();
+	naechsteKachelSammeln();	
+	naechsteKachelSammeln();
+}
+
+void laufeZurueck() {
+
+	linksUm();
+	linksUm();
+	
+	sicheresVor();
+	sicheresVor();
+	sicheresVor();
+	sicheresVor();
+	sicheresVor();
+	
+	linksUm();
+	linksUm();
+}
+
+void naechsteReihe() {
+
+	linksUm();
+	sicheresVor();
+	rechtsUm();
+}
+
+void main() {
+    
+    ernteReihe();
+    laufeZurueck();
+    naechsteReihe();
+
+    ernteReihe();
+    laufeZurueck();
+    naechsteReihe();
+
+    ernteReihe();
+    laufeZurueck();
+    naechsteReihe();
+
+    ernteReihe();
+    laufeZurueck();
+}
