@@ -97,42 +97,42 @@ void main() {
     rechtsUm();
     
     // und es geht los mit Poolreihe 1
-    if( vornFrei() ) {
-    	vor();
+	if( vornFrei() ) {
+		vor();
 		linksUm();
-    	fuelleReihe();
-    	kehrtUm();
-    	laufeZurueck();
-    	linksUm();
-    }
+		fuelleReihe();
+		kehrtUm();
+		laufeZurueck();
+		linksUm();
+	}
 
     // ... dann Poolreihe 2
-    if( vornFrei() ) {
-    	vor();
+	if( vornFrei() ) {
+		vor();
 		linksUm();
-    	fuelleReihe();
-    	kehrtUm();
-    	laufeZurueck();
-    	linksUm();
-    }
+		fuelleReihe();
+		kehrtUm();
+		laufeZurueck();
+		linksUm();
+	}
     
     // ... dann Poolreihe 3
-    if( vornFrei() ) {
-    	vor();
+	if( vornFrei() ) {
+		vor();
 		linksUm();
-    	fuelleReihe();
-    	kehrtUm();
-    	laufeZurueck();
-    	linksUm();
-    }
+		fuelleReihe();
+		kehrtUm();
+		laufeZurueck();
+		linksUm();
+	}
     
     // ... dann Poolreihe 4
-    if( vornFrei() ) {
-    	vor();
+	if( vornFrei() ) {
+		vor();
 		linksUm();
-    	fuelleReihe();
-    	kehrtUm();
-    	laufeZurueck();
-    	linksUm();
-    }
+		fuelleReihe();
+		kehrtUm();
+		laufeZurueck();
+		linksUm();
+	}
 }
