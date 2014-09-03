@@ -36,6 +36,10 @@ void sicheresGib() {
 		gib();
 }
 
+/**
+ * füllt eine Poolreihe mit Körnern
+ *
+ */
 void fuelleReihe() {
 
 	sicheresGib();
@@ -51,6 +55,10 @@ void fuelleReihe() {
 
 }
 
+/**
+ * nimmt alle 16 Körner von der Kachel auf
+ *
+ */
 void nimmAlle() {
 
 	sicheresNimm();
@@ -74,6 +82,10 @@ void nimmAlle() {
 	sicheresNimm();
 }
 
+/**
+ * läuft zum Beginn der Poolreihe zurück
+ *
+ */
 void laufeZurueck() {
 	
 	sicheresVor();
@@ -81,6 +93,13 @@ void laufeZurueck() {
 	sicheresVor();
 }
 
+/**
+ * Hauptprogramm steuert die einzelnen Phasen:
+ *
+ * - Körner aufnehmen
+ * - Poolreihen füllen
+ * 
+ */ 
 void main() {
     
     // Körner abholen
@@ -96,7 +115,7 @@ void main() {
     sicheresVor();
     rechtsUm();
     
-    // und es geht los mit Poolreihe 1
+    // und es geht los mit Poolreihe 1, falls vorhanden
 	if( vornFrei() ) {
 		vor();
 		linksUm();
@@ -106,7 +125,7 @@ void main() {
 		linksUm();
 	}
 
-    // ... dann Poolreihe 2
+    // ... dann Poolreihe 2, falls vorhanden
 	if( vornFrei() ) {
 		vor();
 		linksUm();
@@ -116,7 +135,7 @@ void main() {
 		linksUm();
 	}
     
-    // ... dann Poolreihe 3
+    // ... dann Poolreihe 3, falls vorhanden
 	if( vornFrei() ) {
 		vor();
 		linksUm();
@@ -126,7 +145,7 @@ void main() {
 		linksUm();
 	}
     
-    // ... dann Poolreihe 4
+    // ... dann Poolreihe 4, falls vorhanden
 	if( vornFrei() ) {
 		vor();
 		linksUm();

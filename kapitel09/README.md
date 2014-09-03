@@ -21,3 +21,17 @@
 
 	if( !maulLeer() )
 		gib();
+
+##Bedingte Anweisung mit Alternative
+
+	if( <boolescher Ausdruck> )
+		Anweisung;
+	else
+		alternativeAnweisung;
+
+	z.B.:
+
+	if( vornFrei() )
+		vor();
+	else
+		linksUm();
