@@ -1,0 +1,31 @@
+/*imperative program*/
+/**
+ * Veranschaulichung der Programmschleife
+ *
+ */
+
+void laufeKante() {
+
+	while( vornFrei() ) {		// solange vorne frei ist ..
+		vor();				// .. mach den Schritt nach vorn
+		if( kornDa() )
+			nimm();
+			
+	}
+}
+ 
+void main() {
+
+	laufeKante();
+	linksUm();
+
+	laufeKante();
+	linksUm();
+
+	laufeKante();
+	linksUm();
+
+	laufeKante();
+	linksUm();
+
+}
