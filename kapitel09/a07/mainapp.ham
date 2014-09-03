@@ -62,19 +62,22 @@ void naechsteReihe() {
 }
 
 void main() {
+
+	ernteReihe();
+	laufeZurueck();
     
-    ernteReihe();
-    laufeZurueck();
-    naechsteReihe();
+	naechsteReihe();
 
-    ernteReihe();
-    laufeZurueck();
-    naechsteReihe();
+	ernteReihe();
+	laufeZurueck();
+    
+	naechsteReihe();
 
-    ernteReihe();
-    laufeZurueck();
-    naechsteReihe();
+	ernteReihe();
+	laufeZurueck();
+    
+	naechsteReihe();
 
-    ernteReihe();
-    laufeZurueck();
+	ernteReihe();
+	laufeZurueck();
 }
