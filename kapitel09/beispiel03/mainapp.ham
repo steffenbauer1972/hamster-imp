@@ -1,0 +1,36 @@
+/*imperative program*//**
+ * Einsatz einer alternativen Anweisung
+ *
+ */
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void main() {
+ 
+	vor();
+	vor();
+	
+	// prüfen, ob links oder rechts weiter gelaufen werden soll
+	// kornDa(): true  -> links
+	// kornDa(): false -> rechts   
+	
+	if( kornDa() ) 	// bedingte Ausführung
+	{
+		linksUm();
+		vor();
+		vor();
+		vor();
+	}
+	else			// Alternative
+	{
+		rechtsUm();
+		vor();
+		vor();
+		vor();
+	}
+}

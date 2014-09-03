@@ -1,0 +1,20 @@
+/*imperative program*//**
+ * Veranschaulichung der Blockanweisung/ des Anweisungsblocks
+ *
+ */
+ 
+void main() {
+
+	// Hamster soll sich zur Kreuzung bewegen
+	vor();
+	vor();    
+	
+	// jetzt ist zu prüfen, ob hier ein Korn liegt
+	if( kornDa() ) 
+	{
+		linksUm();
+		vor();
+		vor();
+		vor();
+	}
+}
