@@ -40,7 +40,7 @@ void main() {
 
 	ernteVonLinksNachRechts();
 	
-	while( vornFrei() )	 {
+	while( vornFrei() )	 {		// rote Bewegung
 		
 		vor();
 		ernteVonRechtsNachLinks();
