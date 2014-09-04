@@ -1,0 +1,26 @@
+/*imperative program*//**
+ * Veranschaulichung einer verschachtelten Schleife
+ *
+ * Aufgabe: Der Hamster soll durch einen Gang laufe und dabei ALLE Körner einsammeln.
+ *
+ */
+
+ 
+void main() {
+	
+	// die äußere Schleife bewegt den Hamster durch den Gang
+	while( vornFrei() ) {
+	
+		
+		// die innere Schleife sammelt alle Körner ein
+		while( kornDa() )
+			nimm();
+	
+	
+		vor();
+	}
+	
+	// wir müssen die letzte Kachel von Hand nacharbeiten ... 
+	while( kornDa() )
+		nimm();
+}

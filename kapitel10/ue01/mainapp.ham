@@ -1,0 +1,38 @@
+/*imperative program*/
+/**
+ * Hamster läuft einen regelmäßigen Berg unbekannter Höhe hinauf und
+ * bleibt auf dem Gipfel stehen.
+ *
+ * regelmäßiger Berg = jeder Stufe ist 1x1 Kacheln hoch und breit
+ *
+ */
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void laufeZumBerg() {
+
+	while( vornFrei() )
+		vor();
+}
+
+void erklimmeStufe() {
+
+	linksUm();
+	vor();
+	rechtsUm();
+	vor();
+}
+
+void main() {
+
+	laufeZumBerg();
+	
+	do 
+		erklimmeStufe();
+	while( !vornFrei() );    
+}

@@ -1,0 +1,67 @@
+/*imperative program*//**
+ * Hamster läuft einen unregelmäßigen Berg unbekannter Höhe hinauf und
+ * bleibt auf dem Gipfel stehen.
+ *
+ * unregelmäßiger Berg = jeder Stufe ist 1 Kachel hoch und beliebig viele Kacheln breit
+ *
+ */
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void laufeZumBerg() {
+
+	while( vornFrei() )
+		vor();
+}
+
+void erklimmeStufe() {
+
+	linksUm();
+	vor();
+	rechtsUm();
+	vor();
+}
+
+
+void laufeZurNaechstenStufe() {
+	
+	do {
+	
+		// wenn vorn nicht frei ist, 
+		// dann stehe ich vor der nächsten Stufe
+		if( vornFrei() )
+			vor();
+		else
+			break;
+
+		// wenn nach der Rechtsdrehung vorn frei ist,
+		// dann stehe ich über dem Abgrund
+		rechtsUm();
+		if( vornFrei() )
+			break;
+
+		linksUm();
+
+	} while( true );
+}
+
+void main() {
+
+	laufeZumBerg();
+
+	do {
+		erklimmeStufe();
+		laufeZurNaechstenStufe();		
+	} while( !vornFrei() );
+	
+	rechtsUm();
+	vor();
+	linksUm();
+	linksUm();
+	  
+}
