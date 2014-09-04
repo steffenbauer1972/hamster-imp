@@ -1,0 +1,53 @@
+/*imperative program*/void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();	
+}
+
+void sammleAlle() {
+
+	while( kornDa() )
+		nimm();
+}
+
+void ernteVonLinksNachRechts() {
+
+	rechtsUm();
+	ernteReihe();
+	linksUm();
+}
+
+void ernteVonRechtsNachLinks() {
+
+	linksUm();
+	ernteReihe();
+	rechtsUm();
+}
+
+void ernteReihe() {
+
+	sammleAlle();
+	
+	while( vornFrei() ) {
+		
+		vor();
+		sammleAlle();
+	}
+}
+
+void main() {
+
+	ernteVonLinksNachRechts();
+	
+	while( vornFrei() )	 {
+		
+		vor();
+		ernteVonRechtsNachLinks();
+		if( vornFrei() ) {
+		
+			vor();
+			ernteVonLinksNachRechts();
+		}			
+	} 
+}
