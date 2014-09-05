@@ -1,0 +1,69 @@
+/*imperative program*/
+/**
+ * linksFrei
+ */
+ 
+boolean linksFrei() {
+
+	linksUm();
+	
+	if( vornFrei() ) {
+	
+		rechtsUm();
+		return true;
+		
+	} else {
+	
+		rechtsUm();
+		return false;
+	}
+	
+}
+
+/**
+ * rechtsFrei
+ */
+ 
+boolean rechtsFrei() {
+
+	rechtsUm();
+	
+	if( vornFrei() ) {
+	
+		linksUm();
+		return true;
+		
+	} else {
+	
+		linksUm();
+		return false;
+	}
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void main() {
+
+	if( linksFrei() || rechtsFrei() )
+		gib();
+		
+	// wir laufen durch den Gang von links nach rechts
+	while( vornFrei() ) {
+	
+		vor();
+		
+		if( linksFrei() || rechtsFrei() )
+			gib();
+	}
+}
+
+
+
+
+
+
