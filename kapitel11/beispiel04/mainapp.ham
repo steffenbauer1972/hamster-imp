@@ -1,0 +1,70 @@
+/*imperative program*/
+/**
+ * boolesche Funktion mit Nebeneffekt
+ *
+ * liefert TRUE, falls der Hamster bis zur nächsten Stufe laufen konnte
+ * liefert FALSE, falls der Hamster einen Abgrund entdeckt hat
+ */
+boolean laufeZurStufe() {
+
+	// die Schleife versucht, bis zur nächsten Stufe zu laufen
+	while( vornFrei() ) {
+	
+		vor();
+		if( rechtsFrei() )	// ...und endet sofort, falls ein Abgrund entdeckt wurde
+			return false;
+	}
+	
+	// nachdem die Schleife den Hamster ERFOLGREICH zur nächsten Stufe
+	// bewegt hat, liefert die boolesche Funktion den Wert true
+	return true;
+	
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+boolean rechtsFrei() {
+
+	rechtsUm();
+	
+	if( vornFrei() ) {
+		
+		linksUm();
+		return true;
+	} else {
+		
+		linksUm();
+		return false;
+	}
+}
+
+void erklimmeStufe() {
+
+	linksUm();
+	vor();
+	rechtsUm();
+	vor();
+}
+
+void main() {
+
+	// Heureka!
+	while( laufeZurStufe() )	// pinkfarbene Bewegung
+		erklimmeStufe();		// grüne Bewegung
+
+	linksUm();
+	linksUm();
+	vor();
+	linksUm();
+	linksUm();
+
+}
+
+
+
+
