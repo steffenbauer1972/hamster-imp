@@ -1,0 +1,40 @@
+/*imperative program*//**
+ * Veranschaulichung Boolesche Funktionen
+ *
+ */
+ 
+/**
+ * linksFrei() liefert eine Aussage darüber, ob die Kachel links neben
+ * dem Hamster betreten werden kann oder nicht (true, false)
+ *
+ */
+
+boolean linksFrei() {
+
+	linksUm();	// der Hamster schaut jetzt direkt auf die zu prüfende Kachel
+
+	if( vornFrei() ) {	
+		
+		rechtsUm();		// wieder zurück drehen
+		return true;	// und das Ergebnis WAHR liefern
+	
+	} else {
+	
+		rechtsUm();		// wieder zurück drehen
+		return false;
+	}
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void main() {
+
+	// Aufruf der booleschen Funktion
+	while( ! linksFrei() )
+		vor();
+}

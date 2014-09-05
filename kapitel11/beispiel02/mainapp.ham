@@ -1,0 +1,50 @@
+/*imperative program*//**
+ * Hamster läuft durch den Gang und legt an jedem
+ * Abzweig nach links ein Korn ab
+ *
+ */
+ 
+/**
+ * linksFrei() liefert eine Aussage darüber, ob die Kachel links neben
+ * dem Hamster betreten werden kann oder nicht (true, false)
+ *
+ */
+
+boolean linksFrei() {
+
+	linksUm();	// der Hamster schaut jetzt direkt auf die zu prüfende Kachel
+
+	if( vornFrei() ) {	
+		
+		rechtsUm();		// wieder zurück drehen
+		return true;	// und das Ergebnis WAHR liefern
+	
+	} else {
+	
+		rechtsUm();		// wieder zurück drehen
+		return false;
+	}
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void main() {
+
+	// der Hamster muss durch den Gang laufen
+	while( vornFrei() ) {
+	
+		// und nun wird geprüft, ob ein linker Abzweig vorhanden ist
+		if( linksFrei() )
+			gib();
+			
+		vor();
+	}
+	
+	if( linksFrei() )
+		gib();
+}
