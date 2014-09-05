@@ -43,10 +43,11 @@ boolean rechtsFrei() {
 	}
 }
 
-void erklimmeStufe() {	// grüne Bewegung
+void erklimmeStufe() {	// neue grüne Bewegung
 
 	linksUm();
-	vor();
+	while( !rechtsFrei() )
+		vor();
 	rechtsUm();
 	vor();
 }
