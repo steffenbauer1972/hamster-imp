@@ -1,5 +1,9 @@
 #Boolesche Funktionen
 
+Boolesche Funktionen erlauben das Schreiben eigener "Testbefehle", z.B. linksFrei() oder rechtsFrei().
+
+Ändern boolesche Funktionen den Programmkontext, spricht man von einem Nebeneffekt(  side effect, Seiteneffekt ).
+
 ##Boolesche Return-Anweisung
 	
 	return <boolescher Ausdruck>;
@@ -20,7 +24,6 @@
 	}
 
 ##Funktionsaufruf
-
 
 	...
 	if( fktName() ) {
