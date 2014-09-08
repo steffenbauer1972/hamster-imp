@@ -1,0 +1,148 @@
+/*imperative program*/void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+boolean rechtsFrei() {
+
+	rechtsUm();
+	
+	if( vornFrei() ) {
+		
+		linksUm();
+		return true;
+	} 
+	else {
+		
+		linksUm();
+		return false;
+	}
+}
+
+boolean linksFrei() {
+
+	linksUm(); 
+	
+	if( vornFrei() ) {
+	
+		rechtsUm();
+		return true;
+	} 
+	else {
+		
+		rechtsUm();
+		return false;
+	}
+}
+
+void blaueBewegung() {
+
+	linksUm();
+	vor();
+	rechtsUm();
+	vor();
+	
+	while( !rechtsFrei() ) {
+		
+		vor();
+	}
+	
+	rechtsUm();
+	vor();
+	linksUm();
+}
+
+void pinkeBewegung() {
+	
+	rechtsUm();
+	vor();
+	linksUm();
+	vor();
+	
+	while( !linksFrei() ) {
+		
+		vor();
+	}
+	
+	linksUm();
+	vor();
+	rechtsUm();
+}
+
+/**
+ * versucht, den Hamster bis zur nächsten Slalomstange (Mauer) 
+ * zu bewegen
+ *
+ * der Hamster bleibt stehen, wenn ein Korn gefunden wurde
+ *
+ * grueneBewegung() liefert TRUE, falls die nächste Mauer erreicht wurde
+ * 					liefert FALSE, falls ein Korn gefunden wurde
+ */
+boolean grueneBewegung() {
+
+	// prüfe auf der aktuellen Kachel, ob ein Korn liegt
+	if( kornDa() )
+		return false;	// falls Korn gefunden -> FERTIG
+	
+	// versuche den Hamster zur nächsten Mauer laufen zu lassen
+	while( vornFrei() ) {
+		
+		vor();		
+		if( kornDa() )	
+			return false;	// ...falls dabei Korn gefunden -> FERTIG
+			
+	}
+	
+	// juhu, wir haben es bis zur nächsten Mauer geschafft
+	return true;
+}
+
+void main() {
+    
+    // solange erfolgreich zur nächsten Slalomstange
+    // gelaufen werden kann
+    while( grueneBewegung() ) {
+    	
+    	// ... dann anschließend gleich oben lang
+    	blaueBewegung();
+    	
+    	// versuche gleich noch zur nächsten Slalomstange zu laufen
+    	if( grueneBewegung() )
+    		pinkeBewegung();	// und laufe dann unten lang
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

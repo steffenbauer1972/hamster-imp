@@ -1,0 +1,69 @@
+/*imperative program*/void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void kehrtUm() {
+
+	linksUm();
+	linksUm();
+}
+
+/**
+ * linksKorn() untersucht die Kachel links vom Hamster daraufhin,
+ * ob dort ein Korn liegt (true, false)
+ *
+ * der Hamster muss dazu auf die Kachel bewegt werden (wegen der Prüfung kornDa())
+ *
+ * damit Nebeneffekte (Seiteneffekte) vermieden werden, wird der Hamster anschließend
+ * wieder zur Ausgangskachel zurück bewegt
+ *
+ */
+boolean linksKorn() {
+
+	// der Hamster geht zu der Kachel hin
+	linksUm();
+	vor();
+	
+	// ..prüft auf der Kachel
+	if( kornDa() ) {
+	
+		// und geht wieder zurück
+		kehrtUm();
+		vor();
+		linksUm();
+		
+		// liefert die Aussage: KORN IST DA
+		return true;
+	} 
+	else {
+
+		// und geht wieder zurück		
+		kehrtUm();
+		vor();
+		linksUm();
+		
+		// liefert die Aussage: KORN IST NICHT DA
+		return false;
+	}	
+}
+
+void main() {
+
+	// Initialisierung
+	gib();
+	vor();
+	linksUm();
+	
+	do {
+		
+		gib();
+		if( !linksKorn() )
+			linksUm();
+		vor();
+	} while( vornFrei() || !linksKorn() );
+	
+	gib();
+}
