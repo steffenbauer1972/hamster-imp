@@ -1,0 +1,74 @@
+/*imperative program*/boolean rechtsFrei() {
+
+	rechtsUm();
+	
+	if( vornFrei() ) {
+	
+		linksUm();
+		return true;
+	}
+	else {
+	
+		linksUm();
+		return false;
+	}
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+/**
+ * neues rechtsFrei() unter Verwendung einer booleschen Variable
+ *
+ */
+ 
+boolean neuesRechtsFrei() {
+
+	rechtsUm();
+	
+	// boolesche Variable
+	boolean miniGehirn = vornFrei();
+	
+	linksUm();
+	
+	return miniGehirn;
+}
+
+/**
+ * neues linksFrei() unter Verwendung einer booleschen Variable
+ *
+ */
+
+boolean neuesLinksFrei() {
+	
+	linksUm();
+	
+	// boolesche Variable
+	boolean miniGehirn = vornFrei();
+	
+	rechtsUm();
+	
+	return miniGehirn;
+}
+
+void main() {
+
+	if( rechtsFrei() )
+		gib();
+		
+	if( neuesRechtsFrei() )
+		gib(); 
+		
+		
+	boolean miniGehirn = neuesRechtsFrei();   
+}
+
+
+
+
+
+

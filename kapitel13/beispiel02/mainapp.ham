@@ -1,0 +1,42 @@
+/*imperative program*/// globale Variable
+boolean gehirnGlobal = false;
+
+
+boolean funktion() {
+	
+	// die Variable ist nur innerhalb von "funktion" gültig
+	boolean gehirnFunktion = true;
+	
+	// wir versuchen, auf eine momentan nicht gültige Variablenbezeichnung 
+	// zuzugreifen 
+	if( gehirnMain == true )	// FEHLER beim Übersetzen
+		gib();
+	
+	return false;
+}
+
+void prozedur() {
+
+	// die Variable ist nur innerhalb von "prozedur" gültig
+	boolean gehirnProzedur = false;
+	
+	funktion();
+}
+
+void main() {
+    
+    // diese Variable ist nur innerhalb von "main" gültig
+    boolean gehirnMain = true;
+    
+    if( vornFrei() ) {
+    
+    	// neuer Gültigkeitsbereich
+    	boolean kurzZeitGehirn = true;
+    	
+    	kornDa();
+    	
+    }
+    prozedur();
+    
+    
+}
