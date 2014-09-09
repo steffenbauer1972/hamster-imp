@@ -6,7 +6,7 @@
  */
  
 // wir benötigen diese Variable während der gesamten Programmlaufzeit
-// --> globale Variable
+// 		--> globale Variable
 boolean kornLegen = true;
 
 /**
@@ -71,7 +71,7 @@ void main() {
 		vonRechtsNachLinks();
 		
 		// wenn es noch eine Reihe gibt ...
-		if(vornFrei()) {
+		if( vornFrei() ) {
 		
 			// ... in diese Reihe gehen
 			neuesVor();
