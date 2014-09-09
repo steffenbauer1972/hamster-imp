@@ -1,0 +1,63 @@
+/*imperative program*/
+/**
+ * Aufgabe: Hamster läuft von Links nach Rechts und legt in jeder
+ *			zweiten Grube ein Korn aus.
+ *
+ */
+ 
+void rechtsUm(){
+	
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+boolean rechtsFrei() {
+
+	rechtsUm();
+	boolean rFrei = vornFrei();
+	linksUm();
+	
+	return rFrei;
+}
+
+/**
+ * legt ein Korn in die Grube
+ *
+ */
+void kornInGrube() {
+
+	rechtsUm();
+	vor();
+	gib();
+	
+	linksUm();
+	linksUm();
+	
+	vor();
+	rechtsUm();
+}
+
+void main() {
+    
+    boolean kornLegen = true;
+    
+    // durchlaufe den Gang von links nach rechts (blauer Pfeil)
+    while( vornFrei() ) {
+    
+    	vor();
+    	// auf jeder Kachel prüfen, ob der Hamster über einer Grube steht
+    	if (rechtsFrei() ) {	// gelber Kreis
+  			
+  			// falls ein Korn ausgelegt werden muss ...  		
+    		if( kornLegen == true ) {	// gelber, großer Kreis
+				// Korn auslegen
+    			kornInGrube();
+    		}
+    		
+    		// alternierend "Korn ablegen" / "Korn nicht ablegen"
+    		kornLegen = ! kornLegen;
+    	}
+    }
+    
+}

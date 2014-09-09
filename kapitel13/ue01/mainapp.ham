@@ -1,0 +1,23 @@
+/*imperative program*/void main() {
+
+	boolean kornLegen = true;
+	
+	while( vornFrei() ) {
+	
+		vor();
+		
+		if( kornLegen == true) 
+			gib();
+		
+		// wir negieren den Wert von kornLegen und speichern
+		// den negierten Wert wieder in kornLegen
+		//
+		// angenommen, kornLegen hätte den Wert true
+		// dann:
+		//		(1)	kornLegen wird negiert TRUE -> FALSE
+		//		(2)	der negierte Werte wird in kornLegen gepspeichert
+		//				--> kornLegen hat dann den Wert false
+		//
+		kornLegen = ! kornLegen;
+	}
+}
