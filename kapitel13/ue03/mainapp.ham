@@ -64,12 +64,19 @@ void main() {
 	// .. und nun alle weiteren Reihen
 	while( vornFrei() ) {
 		
+		// in die nächste Reihe gehen
 		neuesVor();
+		
+		// die Reihe auslegen
 		vonRechtsNachLinks();
 		
+		// wenn es noch eine Reihe gibt ...
 		if(vornFrei()) {
 		
+			// ... in diese Reihe gehen
 			neuesVor();
+			
+			// die Reihe auslegen
 			vonLinksNachRechts();
 		}
 	}
