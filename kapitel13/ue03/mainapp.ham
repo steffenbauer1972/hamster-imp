@@ -51,7 +51,10 @@ void reiheAuslegen() {
 }
 
 /**
- * Hamster steht in der linken unteren Ecke, Blickrichtung NORDEN
+ * Hamster steht in der linken unteren Ecke, Blickrichtung NORDEN.
+ * Hamster hat genügend Körner im Maul.
+ * Anzahl Reihen oder Spalten ist beliebig
+ *
  */
 void main() {
 
