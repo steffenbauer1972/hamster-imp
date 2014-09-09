@@ -1,0 +1,73 @@
+/*imperative program*/
+/**
+ * Hamster soll ein Schachbrettmuster auslegen. 
+ * Keine Kachel darf mehrfach betreten werden.
+ *
+ */
+ 
+// wir benötigen diese Variable während der gesamten Programmlaufzeit
+// --> globale Variable
+boolean kornLegen = true;
+
+/**
+ * bei jedem zweiten Schritt wird ein Korn abgelegt
+ *
+ */
+void neuesVor() {
+
+	vor();
+	
+	if( kornLegen ) 
+		gib();
+		
+	kornLegen = ! kornLegen;
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void vonLinksNachRechts() {
+
+	rechtsUm();
+	reiheAuslegen();
+	linksUm();
+}
+
+void vonRechtsNachLinks() {
+
+	linksUm();
+	reiheAuslegen();
+	rechtsUm();
+}
+
+void reiheAuslegen() {
+
+	while( vornFrei() )
+		neuesVor();
+}
+
+/**
+ * Hamster steht in der linken unteren Ecke, Blickrichtung NORDEN
+ */
+void main() {
+
+	// eine Reihe gibt es auf jeden Fall
+	vonLinksNachRechts();
+	
+	// .. und nun alle weiteren Reihen
+	while( vornFrei() ) {
+		
+		neuesVor();
+		vonRechtsNachLinks();
+		
+		if(vornFrei()) {
+		
+			neuesVor();
+			vonLinksNachRechts();
+		}
+	}
+}
