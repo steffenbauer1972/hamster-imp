@@ -1,0 +1,36 @@
+/*imperative program*//**
+ * der Hamster habe eine gewisse Anzahl Körner im Maul und legt die Körner 
+ *
+ *	a)	auf der rechten Seite ab, falls die Anzahl der Körner gerade ist
+ *
+ *	b)	auf der linken Seite ab, falls die Anzahl der Körner ungerade ist
+ *
+ */
+void main() {
+    
+    int anzahl = 0;
+    
+    // Körner durchzählen
+    while( !maulLeer() ) {
+    
+    	gib();
+    	anzahl = anzahl + 1;
+    }
+    
+    // mal fix prüfen, ob die Anzahl der Körner geradzahlig ist
+    if( anzahl % 2 == 0) {
+    	
+    		// ... alle Körner wieder aufnehmen
+    		while( kornDa() )
+    			nimm();
+    			
+    		// auf die andere Seite laufen
+    		while( vornFrei() ) 
+    			vor();
+    			
+    		// und alle Körner ablegen
+    		while( ! maulLeer() )
+    			gib();
+    }
+    
+}

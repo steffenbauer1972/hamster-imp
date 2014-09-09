@@ -1,0 +1,29 @@
+/*imperative program*/
+/**
+ * Veranschaulichung GANZE Zahlen
+ *
+ */
+ 
+void main() {
+
+	// ganzzahlige Variablen definieren
+	
+	int x = 100;	// arithmetischer Ausdruck = Literal
+	
+	int a = -20;	// arithmetischer Ausdruck = Literal
+	
+	int b = a + x;	// arithmetische Ausdruck = Summe
+	
+	int c = 2 * x + a - b * 5;	// arithmetischer Ausdruck = Kettenregel
+	
+	// Graf Zahl ...
+	
+	int grafZahl = 0;
+	
+	while( kornDa() ) {
+	
+		nimm();
+		
+		grafZahl = grafZahl + 1;
+	}	
+}

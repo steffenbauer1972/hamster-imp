@@ -1,0 +1,43 @@
+/*imperative program*//**
+ * Der Hamster soll genau die Hälfte der Körner rechts und links
+ * im Gang auslegen. Ist die Anzahl ungerade, darf der Hamster ein
+ * Korn im Maul behalten.
+ *
+ */
+void main() {
+
+	int anzahl = 0;
+	
+	while( !maulLeer() ) {
+		
+		gib();
+		anzahl = anzahl + 1;
+	}
+	
+	// die Körner wieder aufnehmen
+	while( kornDa() ) 
+		nimm();
+		
+	// die Hälfte ist die Anzahl durch 2
+	int haelfte = anzahl / 2;
+	
+	// die Hälfte der Körnerzahl ablegen
+	while( haelfte > 0 ) {
+		
+		gib();
+		haelfte = haelfte - 1;
+	}
+	
+	// auf die andere Seite flitzen
+	while( vornFrei() )
+		vor();
+		
+	// und noch mal eine Hälfte ablegen
+	haelfte = anzahl / 2;
+	
+	while( haelfte > 0 ) {
+		
+		gib();
+		haelfte = haelfte - 1;
+	}
+}
