@@ -47,25 +47,25 @@ void runter() {
 
 void bergRauf() {
 	
-	linksUm();
+	linksUm();	// nach Norden guggen
 	
-	while( !rechtsFrei() ) {
+	while( !rechtsFrei() ) {	
 		hoch();
 	}
 	
-	rechtsUm();
-	vor();
+	rechtsUm();	// nach Osten guggen
+	vor();		
 }
 
 void bergRunter() {
 
-	rechtsUm();
+	rechtsUm();	// nach Süden guggen
 	
 	while( vornFrei() ) {
 		runter();
 	}
 	
-	linksUm();
+	linksUm();	// nach Osten guggen
 }
 
 /**
@@ -92,20 +92,20 @@ boolean laufeInEbene() {
  */
 void bergUndTal() {
 
-    if( laufeInEbene() ) 
-    	bergRauf();
+    if( laufeInEbene() )	// grüne Bewegung
+    	bergRauf();			// blaue Bewegung, falls Berg gefunden
     else
-    	bergRunter();
+    	bergRunter();		// pinke Bewegung, falls Abgrund gefunden
 
 }
 
 void main() {
     
-	bergUndTal();
+    bergUndTal();
 	    	
-    while( hoehe != 0 ) {
+	while( hoehe != 0 ) {
     
-    	bergUndTal();
+    	bergUndTal();	// grün->blau ODER grün->pink
     }
     
 }
