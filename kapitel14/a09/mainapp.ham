@@ -1,0 +1,194 @@
+/*imperative program*/
+/**
+ * Hamster steht in einem Körnerfeld und hat eine beliebige 
+ * Anzahl Körner im Maul.
+ *
+ * Der Hamster soll auf jeder Kachel des Körnerfelds eine durch
+ * Drei teilbare Anzahl Körner auslegen, also 0, 3, 6, .. , 3n Körner.
+ *
+ */
+
+int anzahlKoernerImMaul = 0;
+
+void kehrtUm() {
+
+	linksUm();
+	linksUm();
+}
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+boolean vornKorn() {
+	
+	if( !vornFrei() )
+		return false;
+	
+	vor();
+	boolean kDa = kornDa();
+	kehrtUm();
+	vor();
+	kehrtUm();
+	
+	return kDa;
+}
+
+/**
+ * Lässt den Hamster zu einer Kante des Kornfelds laufen
+ *
+ */
+boolean laufeKornFeldKante() {
+
+	while( kornDa() ) {
+		
+		if( vornFrei() )
+			vor();
+		else
+			return false;
+	}
+	
+	return true;
+}
+
+/**
+ * Lässt den Hamster zu einer Ecke des Kornfelds laufen
+ *
+ */
+void laufeInKornFeldEcke() {
+	
+	// laufe zur einen Kornfeldkante
+	if( laufeKornFeldKante() ) {
+		
+		kehrtUm();
+		vor();
+		kehrtUm();
+	}
+	
+	// Drehung
+	while( !vornKorn() )
+		linksUm();
+
+	//	laufe zur anderen Kornfeldkante
+	if( laufeKornFeldKante() ) {
+		
+		kehrtUm();
+		vor();
+		kehrtUm();
+	}
+	
+	linksUm();	
+	linksUm();	
+}
+
+/**
+ * Ermittelt die Anzahl der Körner, die der Hamster im Maul hat.
+ *
+ */
+void ermittleAnzahlKoernerImMaul() {
+
+	int tmp = 0;
+	
+	while( !maulLeer() ) {
+	
+		gib();
+		tmp = tmp + 1;
+	}
+	
+	anzahlKoernerImMaul = tmp;
+	
+	while( tmp > 0 ) {
+		nimm();
+		tmp = tmp - 1;
+	}
+} 
+
+/**
+ * prüft auf einer Kachel die Anzahl Körner und legt
+ * das nächstmögliche Vielfache von Drei als neue Anzahl
+ * Körner aus
+ *
+ */
+void bearbeiteKachel() {
+
+	int anzahlKoernerAufKachel = 0;
+	int tmp = 0;
+	
+	// Anzahl der Körner auf der Kachel ermitteln
+	while( kornDa() ) {
+		
+		nimm();
+		tmp = tmp + 1;
+	}
+	
+	anzahlKoernerAufKachel = tmp;
+	
+	int benoetigteKoerner = (3-(tmp % 3));
+	
+	// bestimme, wie viele Körner wieder abgelegt werden
+	if( benoetigteKoerner > anzahlKoernerImMaul ) {
+	
+		anzahlKoernerAufKachel = anzahlKoernerAufKachel - (tmp % 3); 
+		anzahlKoernerImMaul = anzahlKoernerImMaul + (tmp % 3);	
+	}
+	else {
+	
+		anzahlKoernerAufKachel = anzahlKoernerAufKachel + benoetigteKoerner;
+		anzahlKoernerImMaul = anzahlKoernerImMaul - benoetigteKoerner;	
+	}
+		
+	while( anzahlKoernerAufKachel > 0 ) {
+		
+		gib();
+		anzahlKoernerAufKachel = anzahlKoernerAufKachel - 1;
+	}
+}
+
+
+void bearbeiteReihe() {
+
+	bearbeiteKachel();
+
+	while( vornKorn() ) {
+		vor();
+		bearbeiteKachel();	
+	}
+}
+
+void bearbeiteUngeradeReihe() {
+
+	rechtsUm();
+	bearbeiteReihe();	
+	linksUm();
+}
+
+void bearbeiteGeradeReihe() {
+
+	linksUm();
+	bearbeiteReihe();	
+	rechtsUm();
+}
+
+void main() {
+
+	// Initialisierung
+	laufeInKornFeldEcke();
+	ermittleAnzahlKoernerImMaul();
+	
+	
+	// alle Körnerkacheln bearbeiten
+	bearbeiteUngeradeReihe();
+	
+	while( vornKorn() ) {
+		
+		vor();
+		bearbeiteGeradeReihe();
+		if( vornKorn() ) {
+			vor();
+			bearbeiteUngeradeReihe();
+		}
+	}
+}
