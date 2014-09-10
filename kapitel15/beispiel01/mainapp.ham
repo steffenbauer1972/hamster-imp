@@ -1,0 +1,43 @@
+/*imperative program*/
+/**
+ * Veranschaulichung ganzzahlige Funktion (int-Funktionen)
+ *
+ */
+ 
+
+/**
+ * Funktion liefert als Ergebnis eine ganze Zahl (Anzahl d. Körner)
+ *
+ */
+int zaehleKachel() {
+
+	int tmp = 0;
+	
+	// Körner aufnehmen und mitzählen
+	while( kornDa() ) {
+		
+		nimm();
+		tmp = tmp + 1;
+	}
+	
+	// Seiteneffekt zurücknehmen -> Körner wieder hinlegen
+	while( !maulLeer() )
+		gib();
+		
+	// wir liefern als Ergebnis der Funktion (Funktionswert)
+	// die Anzahl Körner
+	return tmp;
+}
+
+void main() {
+
+	int anzahlA = zaehleKachel();
+	vor();
+	int anzahlB = zaehleKachel();
+	
+	int summe = anzahlA + anzahlB;
+	
+	schreib( "Die Summe der Körner im Gang ist: " + summe );
+	
+	
+}
