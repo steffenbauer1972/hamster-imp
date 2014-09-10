@@ -1,0 +1,111 @@
+/*imperative program*/
+/**
+ * Hamster durchquert das Territorium und überwindet
+ * dabei Berge und Täler. Der Hamster bleibt in der Ebene
+ * stehen, die das Ausgangsniveau hat.
+ *
+ */
+ 
+int hoehe = 0;
+
+void rechtsUm() {
+
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+boolean rechtsFrei() {
+
+	rechtsUm();
+	boolean rFrei = vornFrei();
+	linksUm();
+	
+	return rFrei;
+}
+
+boolean linksFrei() {
+
+	linksUm();
+	boolean lFrei = vornFrei();
+	rechtsUm();
+	
+	return lFrei;
+}
+
+void hoch() {
+	
+	vor();
+	hoehe = hoehe + 1;
+}
+
+void runter() {
+	
+	vor();
+	hoehe = hoehe - 1;
+}
+
+void bergRauf() {
+	
+	linksUm();
+	
+	while( !rechtsFrei() ) {
+		hoch();
+	}
+	
+	rechtsUm();
+	vor();
+}
+
+void bergRunter() {
+
+	rechtsUm();
+	
+	while( vornFrei() ) {
+		runter();
+	}
+	
+	linksUm();
+}
+
+/**
+ * Hamster läuft bis zum nächsten Berg und liefert true,
+ * oder findet einen Abgrund und liefert false
+ *
+ */
+boolean laufeInEbene() {
+
+	while( vornFrei() ) {
+		
+		vor();
+		if( rechtsFrei() )
+			return false;	// Abgrund gefunden
+	}
+	
+	return true;	// Berg gefunden
+}
+
+/**
+ * Hamster läuft in der Ebene bis zum nächsten Berg oder Tal
+ * und klettert entweder rauf oder runter
+ *
+ */
+void bergUndTal() {
+
+    if( laufeInEbene() ) 
+    	bergRauf();
+    else
+    	bergRunter();
+
+}
+
+void main() {
+    
+	bergUndTal();
+	    	
+    while( hoehe != 0 ) {
+    
+    	bergUndTal();
+    }
+    
+}
