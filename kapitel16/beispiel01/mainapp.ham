@@ -1,0 +1,44 @@
+/*imperative program*//** 
+ * Der Hamster soll so viele Kacheln vorwärts laufen, wie Körner auf  der Kachel liegen,
+ * auf der er startet. (Anzahl Körner > 1)
+ *
+ */
+
+int anzahlKoernerAufKachel() {
+
+	int anzahl = 0;
+	
+	while( kornDa() ) {
+		
+		nimm();
+		anzahl = anzahl + 1;
+	}
+	
+	
+	while( !maulLeer() ) 
+		gib();
+		
+		
+	return anzahl;
+}
+
+/**
+ * Prozedur lässt den Hamster eine entsprechende Anzahl Schritte vorwärts laufen
+ *
+ */
+void voran( int schritte ) {
+
+	while( schritte > 0 && vornFrei() ) {
+		
+		vor();
+		schritte = schritte - 1;
+	}
+}
+
+void main() {
+    
+    // ermittle Anzahl Körner auf Kachel (check)
+    // lass den Hamster entsprechend weit vorwärts laufen (check)
+    
+    voran( anzahlKoernerAufKachel() * 2);    
+}

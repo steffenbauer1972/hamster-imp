@@ -34,6 +34,15 @@ void naechsteSpalte() {
 	rechtsUm();
 }
 
+void koernerAblegen( int anzahl ) {
+	
+	while( anzahl > 0 && !maulLeer() ) {
+		
+		gib();
+		anzahl = anzahl - 1;
+	}
+}
+
 int zaehleKachel() {
 
 	int tmp = 0;
@@ -47,11 +56,7 @@ int zaehleKachel() {
 	
 	retValue = tmp;
 	
-	while( tmp > 0 ) {
-		
-		gib();
-		tmp = tmp - 1;
-	}
+	koernerAblegen( tmp );	// jetzt besser: Prozedur mit Parameter aufrufen
 	
 	return retValue;	
 }
@@ -80,20 +85,12 @@ void main() {
 		summe = summe / basis ;
 		
 		// Körner auslegen
-		while( auslegen > 0 ) {
-			
-			gib();
-			auslegen = auslegen - 1;
-		}		
+		koernerAblegen( auslegen );
 		
 		// nächste Spalte
 		naechsteSpalte();
 	}
 	
 	// möglicherweise gibt es noch einen Übertrag, der ausgelegt werden muss
-	while( summe > 0 ) {
-		
-		gib();
-		summe = summe - 1;
-	}
+	koernerAblegen( summe );
 }
