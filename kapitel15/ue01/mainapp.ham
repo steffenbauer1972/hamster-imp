@@ -58,7 +58,8 @@ int zaehleKachel() {
 
 void main() {
 
-	int basis = 2
+	int basis = 2;
+	int summe = 0;
 	int auslegen = 0;
 	
 	while( vornFrei() ) {
