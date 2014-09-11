@@ -58,8 +58,7 @@ int zaehleKachel() {
 
 void main() {
 
-	int basis = 2;
-	int summe = 0;
+	int basis = 2
 	int auslegen = 0;
 	
 	while( vornFrei() ) {
@@ -73,8 +72,10 @@ void main() {
 		
 		zurueck();
 		
-		// berechnen, wie viele Körner auszulegen sind und wie groß der Übertrag ist
+		// berechnen, wie viele Körner auszulegen sind
 		auslegen = summe % basis;
+		
+		//  .. und wie groß der Übertrag ist
 		summe = summe / basis ;
 		
 		// Körner auslegen
