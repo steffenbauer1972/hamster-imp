@@ -1,0 +1,97 @@
+/*imperative program*//**
+ * Hamster addiert spaltenweise zwei Zahlen. 
+ * Der Hamster startet unten rechts und habe ausreichend Körner im Maul.
+ *
+ * Der Hamster kann in verschiedenen Zahlensystemen rechnen (binär, dezimal). Dazu ist in der
+ * Main-Prozedur lediglich die Basis des Stellenwertsystems zu konfigurieren.
+ *
+ */
+void rechtsUm() {
+	
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void kehrtUm() {
+
+	linksUm();
+	linksUm();
+}
+
+void zurueck() {
+	
+	kehrtUm();
+	while( vornFrei() )
+		vor();
+	kehrtUm();
+}
+
+void naechsteSpalte() {
+
+	linksUm();
+	vor();
+	rechtsUm();
+}
+
+int zaehleKachel() {
+
+	int tmp = 0;
+	int retValue = 0;
+	
+	while( kornDa() ) {
+		
+		nimm();
+		tmp = tmp + 1;
+	}
+	
+	retValue = tmp;
+	
+	while( tmp > 0 ) {
+		
+		gib();
+		tmp = tmp - 1;
+	}
+	
+	return retValue;	
+}
+
+void main() {
+
+	int basis = 2;
+	int summe = 0;
+	int auslegen = 0;
+	
+	while( vornFrei() ) {
+	
+		// berechnen der Spaltensumme
+		while( vornFrei() ) {
+			
+			vor();
+			summe = summe + zaehleKachel();
+		}
+		
+		zurueck();
+		
+		// berechnen, wie viele Körner auszulegen sind und wie groß der Übertrag ist
+		auslegen = summe % basis;
+		summe = summe / basis ;
+		
+		// Körner auslegen
+		while( auslegen > 0 ) {
+			
+			gib();
+			auslegen = auslegen - 1;
+		}		
+		
+		// nächste Spalte
+		naechsteSpalte();
+	}
+	
+	// möglicherweise gibt es noch einen Übertrag, der ausgelegt werden muss
+	while( summe > 0 ) {
+		
+		gib();
+		summe = summe - 1;
+	}
+}
