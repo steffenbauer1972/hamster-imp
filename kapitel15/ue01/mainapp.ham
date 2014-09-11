@@ -63,7 +63,7 @@ int zaehleKachel() {
 
 void main() {
 
-	int basis = 2;
+	int basis = 10;
 	int summe = 0;
 	int auslegen = 0;
 	
